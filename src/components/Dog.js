@@ -1,6 +1,6 @@
-function Dog(props) {
+function Dog({ url }) {
   return (
-    <>This is Dog</>
+    <img src={url} alt="random dog picture" />
   )
 };
 
