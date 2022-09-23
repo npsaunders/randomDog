@@ -22,14 +22,29 @@ function Card(props) {
   };
 
   // Use our Components in Card's returned JSX
-  // Pass the getUrl function as a prop called newurl
-  return (
-    <>
-      This is Card
-      <Button getnewurl={getNewUrl} />
-      <Dog url={url} />
-    </>
-  )
+  // Pass the getNewUrl function as a prop with a key called getnewurl
+  const loaded = () => {
+    return (
+      <div className="card">
+        This is Card
+        <Button getnewurl={getNewUrl} />
+        <Dog url={url} />
+      </div>
+    )
+  };
+
+  //On intial launch of the app, there is no URL
+  const loading = () => {
+    return (
+      <div className="loadingContainer">
+        <h3>No Dog Picture Loaded</h3>
+        <Button getnewurl={getNewUrl} />
+      </div>
+    )
+  }
+
+  //If the app has just loaded, there is no url so only show the text
+  return url ? loaded() : loading();
 };
 
 export default Card;

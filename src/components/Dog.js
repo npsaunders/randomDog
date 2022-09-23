@@ -1,6 +1,9 @@
 function Dog({ url }) {
+
   return (
-    <img src={url} alt="random dog picture" />
+    <div className="dogContainer">
+      <img className="dogImg" src={url} alt="random dog" />
+    </div >
   )
 };
 
